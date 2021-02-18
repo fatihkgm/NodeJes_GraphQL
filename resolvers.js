@@ -16,7 +16,7 @@ exports.resolvers = {
         addEmployee: async (parent, args) => {
             console.log(args)
             const emailExpression = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-            const isValidEmail =  emailExpression.test(String(email).toLowerCase())
+            const isValidEmail =  emailExpression.test(String(args.email).toLowerCase())
             
             if(!isValidEmail){
                 throw new Error("email not in proper format")
